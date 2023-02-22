@@ -19,7 +19,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/DorottyaB/password-generator-app)
-- Live Site URL: [GitHub Pages]()
+- Live Site URL: [GitHub Pages](https://dorottyab.github.io/password-generator-app/)
 
 ### Built with
 
