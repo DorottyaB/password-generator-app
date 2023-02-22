@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <main>
+      <h1>Password Generator</h1>
+      <article class="textbox">
+        <h2 class="placeholder">P4$5W0rD!</h2>
+        <button class="copy-btn" aria-label="Copy" title="Copy">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24px"
+            height="24px"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#a4ffaf"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
+            />
+          </svg>
+        </button>
+        <div class="alert">Copied!</div>
+      </article>
+      <article class="form-container">
+        <form>
+          <div class="grid">
+            <label for="length">Character Length</label>
+            <input type="range" name="length" id="length" class="slider" max="20" value="0" />
+            <p class="length">0</p>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="uppercase" id="uppercase" />
+            <label for="uppercase">Include Uppercase Letters</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="lowercase" id="lowercase" />
+            <label for="lowercase">Include Lowercase Letters</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="numbers" id="numbers" />
+            <label for="numbers">Include Numbers</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="symbols" id="symbols" />
+            <label for="symbols">Include Symbols</label>
+          </div>
+
+          <div class="flex-row">
+            <p>STRENGTH</p>
+            <div class="bar-container">
+              <p class="strength" id="strength"></p>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+
+          <button type="submit">
+            GENERATE
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14px"
+              height="14px"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#18171f"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+              />
+            </svg>
+          </button>
+          <div class="tooltip"></div>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>

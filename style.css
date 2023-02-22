@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap');
+
+:root {
+  --primary-color: #a4ffaf;
+  --secondary-color: #f8ca63;
+  --bg-color: #24232b;
+  --text-color: #e6e5ea;
+  --light-gray: #807e8d;
+  --dark-gray: #18171f;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  background: rgb(9, 8, 13);
+  background: linear-gradient(
+    0deg,
+    rgba(9, 8, 13, 1) 0%,
+    rgb(26, 24, 34) 50%,
+    rgb(30, 29, 40) 100%
+  );
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 60px 0;
+  font-size: 13px;
+}
+
+main {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+h1 {
+  font-size: 18px;
+  color: var(--light-gray);
+  margin-bottom: 10px;
+}
+
+.textbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 15px 20px;
+  width: 100%;
+  position: relative;
+}
+
+h2.placeholder {
+  color: #5d5c65;
+}
+
+.copy-btn {
+  background-color: transparent;
+}
+
+.copy-btn:hover svg,
+.copy-btn:active svg {
+  stroke: var(--text-color);
+}
+
+.alert {
+  background-color: var(--bg-color);
+  color: var(--secondary-color);
+  height: 28px;
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 20;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.alert.visible {
+  display: flex;
+  opacity: 1;
+}
+
+.form-container {
+  background-color: var(--bg-color);
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.length {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/*********** Baseline, reset styles ***********/
+.slider {
+  grid-area: 2 / 1 / 3 / 3;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Removes default focus */
+.slider:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+.slider::-webkit-slider-runnable-track {
+  background-color: var(--primary-color);
+  border-radius: 0px;
+  height: 7px;
+}
+
+/* slider thumb */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -7px; /* Centers thumb on the track */
+  background-color: var(--text-color);
+  outline: 1.5px solid var(--text-color);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+.slider:focus::-webkit-slider-thumb {
+  outline: 1.5px solid var(--primary-color);
+  background-color: var(--dark-gray);
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+.slider::-moz-range-track {
+  background-color: var(--primary-color);
+  border-radius: 0px;
+  height: 7px;
+}
+
+/* slider thumb */
+.slider::-moz-range-thumb {
+  background-color: var(--text-color);
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+.slider:focus::-moz-range-thumb {
+  outline: 1.5px solid var(--primary-color);
+  background-color: var(--dark-gray);
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  background: transparent;
+  border: 1.5px solid var(--text-color);
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  position: relative;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  top: 0;
+}
+
+input[type='checkbox']:hover,
+input[type='checkbox']:focus {
+  border: 1.5px solid var(--primary-color);
+}
+
+/* for mixed state */
+input[type='checkbox']:indeterminate::before,
+input[type='checkbox'][aria-checked='mixed']::before {
+  border: 1.5px solid var(--bg-color);
+  height: 0;
+  width: 40%;
+}
+
+input[type='checkbox']:checked {
+  background-color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+}
+
+/* check mark */
+input[type='checkbox']:checked::before {
+  border-right: 2px solid var(--bg-color);
+  border-bottom: 2px solid var(--bg-color);
+  height: 74%;
+  width: 40%;
+  transform: rotate(45deg) translateY(-7%) translateX(-5%);
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-gray);
+  padding: 15px 20px;
+  color: var(--light-gray);
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.strength {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 17px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.bar {
+  height: 18px;
+  width: 8px;
+  border: 1.5px solid var(--text-color);
+  background-color: transparent;
+}
+
+.bar.filled {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+button[type='submit'] {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+  color: var(--dark-gray);
+  font-weight: 600;
+  padding: 15px;
+  margin-bottom: 8px;
+  transition: all 0.2s;
+}
+
+button[type='submit']:hover,
+button[type='submit']:active {
+  background-color: transparent;
+  border: 1.5px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+button[type='submit']:hover svg,
+button[type='submit']:active svg {
+  stroke: var(--primary-color);
+}
+
+button[type='submit']:active {
+  transform: scale(0.99);
+}
+
+.tooltip {
+  display: none;
+  opacity: 0;
+  color: var(--secondary-color);
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 0;
+  transition: all 0.4s;
+}
+
+.tooltip.visible {
+  display: block;
+  opacity: 1;
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    width: 380px;
+  }
+}
