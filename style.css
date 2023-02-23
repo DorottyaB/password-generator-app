@@ -213,14 +213,6 @@ input[type='checkbox']:focus {
   border: 1.5px solid var(--primary-color);
 }
 
-/* for mixed state */
-input[type='checkbox']:indeterminate::before,
-input[type='checkbox'][aria-checked='mixed']::before {
-  border: 1.5px solid var(--bg-color);
-  height: 0;
-  width: 40%;
-}
-
 input[type='checkbox']:checked {
   background-color: var(--primary-color);
   border: 1.5px solid var(--primary-color);
